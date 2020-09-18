@@ -11,6 +11,7 @@ export default class CartSummary extends Component {
                 return (
                   <CartItem
                     featureHash={featureHash}
+                    key={featureHash}
                     feature={feature}
                     selectedOption={selectedOption}
                     USCurrencyFormat={this.props.USCurrencyFormat}

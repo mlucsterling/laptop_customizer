@@ -36,7 +36,7 @@ class App extends Component {
   };
 
   updateFeature = (feature, newValue) => {
-    const selected = Object.assign({}, this.props.state.selected);
+    const selected = Object.assign({}, this.state.selected);
     selected[feature] = newValue;
     this.setState({
       selected
@@ -48,13 +48,14 @@ class App extends Component {
     const total = Object.keys(this.state.selected).reduce(
       (acc, curr) => acc + this.state.selected[curr].cost,
       0
-    );
+    );  
 
     return (
       <div className="App">
         <AppHeader  />
         <main>
           <Parts
+            updateFeature={this.updateFeature}
             FeaturesList={FeaturesList}
             state={this.state}
             USCurrencyFormat={USCurrencyFormat}

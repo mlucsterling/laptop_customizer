@@ -12,7 +12,9 @@ export default class PartsList extends Component {
                   const itemHash = slugify(JSON.stringify(item));
                   return (
                         <PartsItem
+                            updateFeature={this.props.updateFeature()}
                             itemHash={itemHash}
+                            key={itemHash}
                             feature={feature}
                             item={item}
                             state={this.props.state}
